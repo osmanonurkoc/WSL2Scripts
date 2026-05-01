@@ -371,6 +371,12 @@ eval "\$(starship init zsh)"
 if command -v fastfetch >/dev/null 2>&1; then
     fastfetch
 fi
+
+# --- 10. KEY BINDINGS ---
+# Ctrl + Right Arrow
+bindkey "^[[1;5C" forward-word
+# Ctrl + Left Arrow
+bindkey "^[[1;5D" backward-word
 EOF
 
 # --- 8. CHANGE DEFAULT SHELL ---
