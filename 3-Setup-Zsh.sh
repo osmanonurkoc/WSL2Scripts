@@ -60,8 +60,8 @@ case $locale_choice in
 esac
 
 # --- 2. INSTALL PACKAGES ---
-echo -e "${YELLOW}>>> Updating system and installing packages (zsh, git, curl, neofetch, wslu)...${NC}"
-sudo apt update && sudo apt install -y zsh git curl wget neofetch wslu
+echo -e "${YELLOW}>>> Updating system and installing packages (zsh, git, curl, fastfetch, wslu)...${NC}"
+sudo apt update && sudo apt install -y zsh git curl wget fastfetch wslu
 
 # --- 3. GENERATE LOCALE ---
 echo -e "${YELLOW}>>> Generating Locale ($SELECTED_LOCALE)...${NC}"
@@ -367,9 +367,9 @@ fi
 # --- 8. INITIALIZE STARSHIP ---
 eval "\$(starship init zsh)"
 
-# --- 9. NEOFETCH ---
-if command -v neofetch >/dev/null 2>&1; then
-    neofetch
+# --- 9. FASTFETCH ---
+if command -v fastfetch >/dev/null 2>&1; then
+    fastfetch
 fi
 EOF
 

@@ -10,7 +10,7 @@ NC='\033[0m' # No Color
 echo -e "${CYAN}>>> Starting Package Setup...${NC}"
 
 # --- PACKAGE LISTS ---
-ESSENTIAL_PKGS="zsh git build-essential htop neofetch tree aria2 eza sed wget curl figlet lolcat rename cryptsetup unzip"
+ESSENTIAL_PKGS="zsh git build-essential htop fastfetch tree aria2 eza sed wget curl figlet lolcat rename cryptsetup unzip"
 OPTIONAL_PKGS="gimp inkscape gparted gnome-tweaks nemo xed"
 
 # --- INSTALLATION MENU ---
