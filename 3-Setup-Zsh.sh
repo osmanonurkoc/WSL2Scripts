@@ -23,8 +23,8 @@ fi
 
 # --- 1. LOCALE SELECTION MENU ---
 echo -e "\n${CYAN}>>> SELECT YOUR SYSTEM LOCALE / LANGUAGE <<<${NC}"
-echo "1) Turkish (tr_TR.UTF-8) [DEFAULT]"
-echo "2) English (en_US.UTF-8)"
+echo "1) English (en_US.UTF-8) [DEFAULT]"
+echo "2) Turkish (tr_TR.UTF-8)"
 echo "3) Mandarin Chinese (zh_CN.UTF-8)"
 echo "4) Hindi (hi_IN.UTF-8)"
 echo "5) Spanish (es_ES.UTF-8)"
@@ -42,7 +42,7 @@ echo "15) Korean (ko_KR.UTF-8)"
 read -p "Enter a number (1-15) [Press Enter for 1]: " locale_choice
 
 case $locale_choice in
-    2) SELECTED_LOCALE="en_US.UTF-8" ;;
+    2) SELECTED_LOCALE="tr_TR.UTF-8" ;;
     3) SELECTED_LOCALE="zh_CN.UTF-8" ;;
     4) SELECTED_LOCALE="hi_IN.UTF-8" ;;
     5) SELECTED_LOCALE="es_ES.UTF-8" ;;
@@ -56,12 +56,12 @@ case $locale_choice in
     13) SELECTED_LOCALE="de_DE.UTF-8" ;;
     14) SELECTED_LOCALE="ja_JP.UTF-8" ;;
     15) SELECTED_LOCALE="ko_KR.UTF-8" ;;
-    *) SELECTED_LOCALE="tr_TR.UTF-8" ;; # Default fallback
+    *) SELECTED_LOCALE="en_US.UTF-8" ;; # Default fallback
 esac
 
 # --- 2. INSTALL PACKAGES ---
-echo -e "${YELLOW}>>> Updating system and installing packages (zsh, git, curl, fastfetch, wslu)...${NC}"
-sudo apt update && sudo apt install -y zsh git curl wget fastfetch wslu
+echo -e "${YELLOW}>>> Updating system and installing packages (zsh, git, curl, fastfetch)...${NC}"
+sudo apt update && sudo apt install -y zsh git curl wget fastfetch
 
 # --- 3. GENERATE LOCALE ---
 echo -e "${YELLOW}>>> Generating Locale ($SELECTED_LOCALE)...${NC}"
@@ -339,9 +339,9 @@ alias windl="cd /mnt/c/Users/$WIN_USER/Downloads"
 
 # WSL2 Tools & Windows Interoperability
 alias exp="explorer.exe ."              # Opens the current directory in Windows File Explorer
-alias copy="clip.exe"                   # Copies terminal output to the Windows clipboard (e.g., cat file.txt | copy)
-alias paste="powershell.exe -command 'Get-Clipboard'" # Pastes text from the Windows clipboard to the terminal
-alias open="wslview"                    # Opens a file or URL with the default Windows application
+alias copy="clip.exe"                   # Copies terminal output to the Windows clipboard
+alias paste="powershell.exe -command 'Get-Clipboard'" # Pastes text from the Windows clipboard
+alias open="powershell.exe -c Start-Process"         # Opens a file or URL with default Windows app
 
 # --- 5. PLUGINS SOURCE ---
 source $PLUGIN_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
