@@ -105,7 +105,7 @@ PACKAGES=(
     mint-themes
     papirus-icon-theme
     qt5ct
-    qt5-style-plugins
+    qt5-style-kvantum
     gtk2-engines-murrine
     gtk2-engines-pixbuf
     dbus-x11
@@ -113,7 +113,7 @@ PACKAGES=(
 )
 
 if apt-cache search qt6ct | grep -q qt6ct; then
-    PACKAGES+=(qt6ct)
+    PACKAGES+=(qt6ct qt6-style-kvantum)
 fi
 
 sudo apt install -y "${PACKAGES[@]}"
@@ -179,7 +179,7 @@ cat << EOF > "$HOME/.config/qt5ct/qt5ct.conf"
 [Appearance]
 icon_theme=$ICON_THEME
 standard_dialogs=default
-style=gtk2
+style=kvantum
 custom_palette=false
 
 [Fonts]
